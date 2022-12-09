@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Script from 'next/script';
 
 import styles from '../styles/Home.module.css';
 const CodeSampleModal = dynamic(() => import('../components/CodeSampleModal'), {
@@ -23,6 +24,11 @@ export default function Start({ countries }) {
           rel="stylesheet"
         />
       </Head>
+
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=123"
+      />
 
       <main className={styles.container}>
         <h1 className={styles.title}>
